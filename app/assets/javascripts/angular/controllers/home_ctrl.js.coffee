@@ -7,7 +7,7 @@ app.controller 'HomeCtrl', ($scope, localStorageService) ->
   ), true
 
   $scope.add = ->
-    $scope.items.push($scope.newItem)
+    $scope.items.push($scope.newItem) if $scope.items.indexOf($scope.newItem) == -1
     $scope.newItem = ''
 
   $scope.remove = (item) ->
