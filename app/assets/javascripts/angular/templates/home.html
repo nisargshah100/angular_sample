@@ -1,0 +1,9 @@
+<div ng-controller='HomeCtrl'>
+  <input type='text' ng-model='searchTerm' placeholder='search term' />
+  <hr />
+  <ul ng-repeat='item in items | filter:searchTerm'>
+    <li>{{item}} <input type='button' value='X' ng-click='remove(item)' /></li>
+  </ul>
+  <hr />
+  <input type='text' ng-model='newItem' /><input type='button' value='Add' ng-click='add()' />
+</div>
