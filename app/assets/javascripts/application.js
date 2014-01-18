@@ -12,12 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 
 //= require angular.min
-//= require ui-router 
+//= require ui-router
+//= require ui-sortable
+//= require local-storage
 
 //= require_self
 //= require angular/router
 //= require_tree .
 
-app = angular.module('codeHire', ['ui.router']);
+app = angular.module('codeHire', ['ui.router', 'ui.sortable', 'LocalStorageModule']);
