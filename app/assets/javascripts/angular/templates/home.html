@@ -1,11 +1,21 @@
 <div ng-controller='HomeCtrl'>
   <input type='text' ng-model='searchTerm' placeholder='search term' />
+  sort: 
+    <input type='button' value='a-z' ng-click='sortAlpha()' />
+    <input type='button' value='z-a' ng-click='sortAlphaDesc()' />
   <hr />
   <div ui-sortable ng-model='items'>
     <ul ng-repeat='item in items | filter:searchTerm'>
-      <li>{{item}} <input type='button' value='X' ng-click='remove(item)' /></li>
+      <item value='item'>
+        <input type='button' value='X' ng-click='remove(item)' />
+      </item>
     </ul>
   </div>
   <hr />
-  <input type='text' ng-model='newItem' /><input type='button' value='Add' ng-click='add()' />
+  <input type='text' ng-model='newItem.name' ng-enter='add()' /><input type='button' value='Add' ng-click='add()' />
+
+
+  <hr />
+  <h4>Debug</h4>
+  <input type='button' value='log items' ng-click='logItems()' />
 </div>
